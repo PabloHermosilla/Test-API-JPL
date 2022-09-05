@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "35f26490-cf97-429d-abcd-5a801b6e58de",
+		"name": "Test_Acceptance-FilterClass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23055031"
+	},
+	"item": [
+		{
+			"name": "Verify-Filter-Class",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*\r",
+							"Test 3: Verify-Filter-Class\r",
+							"Objetive: Test Class filter with valid values\r",
+							"Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+							"Object version: 1.4\r",
+							"Test Version: v1.0\r",
+							"Date:31-08-2022\r",
+							"*/\r",
+							"\r",
+							"var response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"class-IEO\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"IEO\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-ATE\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"ATE\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-APO\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"APO\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-AMO\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"AMO\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-IMB\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"IMB\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-MBA\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"MBA\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-OMB\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"OMB\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-TJN\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"TJN\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-CEN\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"CEN\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-TNO\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"TNO\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-PAA\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"PAA\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-HYA\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"HYA\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-PAR\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"PAR\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-COM\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"COM\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-JFC\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"JFC\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-HTC\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"HTC\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-ETc\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"ETc\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-CTc\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"CTc\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"class-JFc\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"JFc\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/cad.api?class={{class}}",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"cad.api"
+					],
+					"query": [
+						{
+							"key": "class",
+							"value": "{{class}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify-Filter-Class-Fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*\r",
+							"Test 4: Verify-Filter-Class\r",
+							"Objetive: Verify Class filter with incorrect values\r",
+							"Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+							"Object version: 1.4\r",
+							"Test Version: v1.0\r",
+							"Date:31-08-2022\r",
+							"*/\r",
+							"\r",
+							"\r",
+							"//Negative test, this test should fail, in invalid values\r",
+							"pm.test(\"class-invalid\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"1222\");\r",
+							"});\r",
+							"\r",
+							"//Negative test, this test should fail, the variable have to be \"key sensitive\"\r",
+							"pm.test(\"class-com\", function () {\r",
+							"pm.collectionVariables.set(\"class\", \"com\");\r",
+							"});\r",
+							"\r",
+							"//Verifing status 400 fail\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/cad.api?class={{class}}",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"cad.api"
+					],
+					"query": [
+						{
+							"key": "class",
+							"value": "{{class}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.globals.set(\"class\", \"{{class}}\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "class",
+			"value": "{{class}}",
+			"type": "string"
+		}
+	]
+}

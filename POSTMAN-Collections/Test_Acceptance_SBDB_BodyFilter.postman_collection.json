@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "1b6debdd-f4fd-4a97-bcb1-d5845fa017bf",
+		"name": "Test_Acceptance_SBDB_BodyFilter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23055031"
+	},
+	"item": [
+		{
+			"name": "Verify-Filter-Body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*\r",
+							"Test 5: Verify-Filter-Body\r",
+							"Objetive: Test filter body and validate all the correct values.\r",
+							"Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+							"Object version: 1.4\r",
+							"Test Version: v1.0\r",
+							"Date: 31/08/2022\r",
+							"*/\r",
+							"\r",
+							"var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+							"\r",
+							"//set de variable body with all posibilities availables\r",
+							"pm.test(\"body Merc\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Mercurio\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Venus\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Venus\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Earth\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Earth\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Mars\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Mars\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Venus\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Venus\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Juptr\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Jupiter\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Venus\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Venus\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Satrn\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Saturn\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Urnus\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Uranus\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Neptn\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Neptune\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Pluto\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Pluto\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"body Moon\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"Moon\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/cad.api?body={{body}}",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"cad.api"
+					],
+					"query": [
+						{
+							"key": "body",
+							"value": "{{body}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify-Filter-Body-Fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*\r",
+							"Test 6: Verify-Filter-Body-Fail\r",
+							"Objetive: Test filter body with invalid parameter.\r",
+							"Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+							"Object version: 1.4\r",
+							"Test Version: v1.0\r",
+							"Date: 31/08/2022\r",
+							"*/\r",
+							"\r",
+							"var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+							"\r",
+							"//set an inexisten variable, keeping 3 letters.\r",
+							"pm.test(\"body sun\", function () {\r",
+							"pm.collectionVariables.set(\"body\", \"sun\");\r",
+							"});\r",
+							"\r",
+							"//set with numbers de variable.\r",
+							"pm.test(\"body number\", function () {\r",
+							"pm.collectionVariables.set(\"body\", 123);\r",
+							"\r",
+							"});\r",
+							"\r",
+							"//set with numbers de variable.\r",
+							"pm.test(\"body number\", function () {\r",
+							"pm.collectionVariables.set(\"body\", 123);\r",
+							"});\r",
+							"\r",
+							"//Verifing status 400 fail\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/cad.api?body={{body}}",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"cad.api"
+					],
+					"query": [
+						{
+							"key": "body",
+							"value": "{{body}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.globals.set(\"body\", \"{{body}}\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "body",
+			"value": "{{body}}",
+			"type": "string"
+		}
+	]
+}

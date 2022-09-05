@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "fa74caab-ea48-4b46-af90-3a6388e7ea67",
+		"name": "Test_Acceptance_SBDB_API",
+		"description": "Acceptance test suite to SBDB API [StartFragment](StartFragmenthttps://ssd-api.jpl.nasa.gov/cad.apiEndFragmentAuthor)\n\n[https://ssd-api.jpl.nasa.gov/cad.api](StartFragmenthttps://ssd-api.jpl.nasa.gov/cad.apiEndFragmentAuthor)\n\n[EndFragment](StartFragmenthttps://ssd-api.jpl.nasa.gov/cad.apiEndFragmentAuthor)\n\n[Author](StartFragmenthttps://ssd-api.jpl.nasa.gov/cad.apiEndFragmentAuthor) : Pablo Hermosilla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23055031"
+	},
+	"item": [
+		{
+			"name": "Query-Data Output",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*\r",
+							"Test 1: Query-Selectors-Validation\r",
+							"Objetive: Test Query return Values of https://ssd-api.jpl.nasa.gov/cad.api\r",
+							"Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+							"Object version: 1.4\r",
+							"Test Version: v1.0\r",
+							"Date:31/08/2022\r",
+							"*/\r",
+							"var response = pm.response.json(); //se variable to response to values present in query\r",
+							"\r",
+							"//Verify the sonexion status before start the test suit\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"      pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of orbit_id in the response\r",
+							"pm.test(\"orbit_id\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(18);\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of jd in the response\r",
+							"pm.test(\"jd\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(2459835.326536296);\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of cd in the response\r",
+							"pm.test(\"cd\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"2022-Sep-12 19:50\");\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of dist in the response\r",
+							"pm.test(\"dist\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(0.025114646355695);\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of dis_min in the response\r",
+							"pm.test(\"dist_min\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(0.0249979893296788);\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of dist_max in the response\r",
+							"pm.test(\"dist_max\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(0.0252313022978311);\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of v_rel in the response\r",
+							"pm.test(\"v_rel\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(7.11177982709417);\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of v_inf in the response\r",
+							"pm.test(\"v_inf\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(7.1041500508692);\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of t_sigma_f in the response\r",
+							"pm.test(\"t_sigma_f\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"< 00:01\");\r",
+							"});\r",
+							"\r",
+							"//Verify a specific value of h in the response\r",
+							"pm.test(\"h\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(24.02);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-length": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/cad.api",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"cad.api"
+					]
+				},
+				"description": "\"signature\":{\"source\" : \"NASA/JPL SBDB Close Approach Data API\",\"version\" : \"1.4\""
+			},
+			"response": []
+		},
+		{
+			"name": "Query-Filters-Validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*\r",
+							"Test 2: Query-Filters-Validation\r",
+							"Objetive: Verify and validate filters with existen values.\r",
+							"Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+							"Object version: 1.4\r",
+							"Test Version: v1.0\r",
+							"Date:31/08/2022\r",
+							"*/\r",
+							"\r",
+							"//if the value is diferent of 200 the request is not correct\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/cad.api?min-dist-min=0.05&min-dist-max=100000000&h-min=00.01&h-max=20&v-inf-min=0.1&v-inf-max=10&v-rel-min=0&v-rel-max=30000&body=Mars&sort=date&limit=50&diameter=false&fullname=y&des=442523&date-min=2000-12-31&date-max=2100-01-01&dist-max=0.2",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"cad.api"
+					],
+					"query": [
+						{
+							"key": "min-dist-min",
+							"value": "0.05"
+						},
+						{
+							"key": "min-dist-max",
+							"value": "100000000"
+						},
+						{
+							"key": "h-min",
+							"value": "00.01"
+						},
+						{
+							"key": "h-max",
+							"value": "20"
+						},
+						{
+							"key": "v-inf-min",
+							"value": "0.1"
+						},
+						{
+							"key": "v-inf-max",
+							"value": "10"
+						},
+						{
+							"key": "v-rel-min",
+							"value": "0"
+						},
+						{
+							"key": "v-rel-max",
+							"value": "30000"
+						},
+						{
+							"key": "class",
+							"value": "IEO",
+							"disabled": true
+						},
+						{
+							"key": "pha",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "nea",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "comet",
+							"value": "n",
+							"disabled": true
+						},
+						{
+							"key": "nea-comet",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "neo",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "kind",
+							"value": "n",
+							"disabled": true
+						},
+						{
+							"key": "spk",
+							"value": "2000433",
+							"disabled": true
+						},
+						{
+							"key": "des",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "body",
+							"value": "Mars",
+							"description": "Verify body field"
+						},
+						{
+							"key": "sort",
+							"value": "date",
+							"description": "Verify sort field"
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"description": "Verify limit field"
+						},
+						{
+							"key": "diameter",
+							"value": "false",
+							"description": "Verify diameter field"
+						},
+						{
+							"key": "fullname",
+							"value": "y",
+							"description": "Verify fullname field"
+						},
+						{
+							"key": "des",
+							"value": "442523",
+							"description": "Verify des field"
+						},
+						{
+							"key": "date-min",
+							"value": "2000-12-31",
+							"description": "Verify date-min field"
+						},
+						{
+							"key": "date-max",
+							"value": "2100-01-01",
+							"description": "Verify date-max field"
+						},
+						{
+							"key": "dist-max",
+							"value": "0.2",
+							"description": "Verify dist-max field"
+						}
+					]
+				},
+				"description": "\"signature\":{\"source\" : \"NASA/JPL SBDB Close Approach Data API\",\"version\" : \"1.4\""
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
