@@ -1,0 +1,2 @@
+Execute the command once the Docker environment is installed
+docker run -v "%cd%":/etc/newman -t phermosilla/newman:latest run https://www.getpostman.com/collections/61e7aefc9979c6d08921 --reporters json,cli,htmlextra --reporter-json-export="SBDB-FilterClass-report-json.json" --reporter-htmlextra-export="SBDB-FilterClass-reporte.html"
