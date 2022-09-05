@@ -1,0 +1,1906 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "1b6debdd-f4fd-4a97-bcb1-d5845fa017bf"
+    },
+    "item": [
+      {
+        "id": "42e67284-54ae-4ee3-8761-0a3ca1aab045",
+        "name": "Verify-Filter-Body",
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "cad.api"
+            ],
+            "host": [
+              "ssd-api",
+              "jpl",
+              "nasa",
+              "gov"
+            ],
+            "query": [
+              {
+                "key": "body",
+                "value": "{{body}}"
+              }
+            ],
+            "variable": []
+          },
+          "method": "GET"
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "d31ffae7-e75f-421f-8b00-0d42b4aec7cd",
+              "type": "text/javascript",
+              "exec": [
+                "/*\r",
+                "Test 5: Verify-Filter-Body\r",
+                "Objetive: Test filter body and validate all the correct values.\r",
+                "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                "Object version: 1.4\r",
+                "Test Version: v1.0\r",
+                "Date: 31/08/2022\r",
+                "*/\r",
+                "\r",
+                "var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+                "\r",
+                "//set de variable body with all posibilities availables\r",
+                "pm.test(\"body Merc\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Mercurio\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Venus\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Earth\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Earth\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Mars\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Mars\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Venus\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Juptr\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Jupiter\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Venus\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Satrn\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Saturn\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Urnus\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Uranus\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Neptn\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Neptune\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Pluto\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Pluto\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"body Moon\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"Moon\");\r",
+                "});"
+              ],
+              "_lastExecutionId": "4d78be66-2af5-4944-aa51-dbe1d3b16637"
+            }
+          }
+        ]
+      },
+      {
+        "id": "982f76f1-9084-43b3-9594-79eed0229786",
+        "name": "Verify-Filter-Body-Fail",
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "cad.api"
+            ],
+            "host": [
+              "ssd-api",
+              "jpl",
+              "nasa",
+              "gov"
+            ],
+            "query": [
+              {
+                "key": "body",
+                "value": "{{body}}"
+              }
+            ],
+            "variable": []
+          },
+          "method": "GET"
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "97af9a58-6cef-4030-b1c1-318538719581",
+              "type": "text/javascript",
+              "exec": [
+                "/*\r",
+                "Test 6: Verify-Filter-Body-Fail\r",
+                "Objetive: Test filter body with invalid parameter.\r",
+                "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                "Object version: 1.4\r",
+                "Test Version: v1.0\r",
+                "Date: 31/08/2022\r",
+                "*/\r",
+                "\r",
+                "var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+                "\r",
+                "//set an inexisten variable, keeping 3 letters.\r",
+                "pm.test(\"body sun\", function () {\r",
+                "pm.collectionVariables.set(\"body\", \"sun\");\r",
+                "});\r",
+                "\r",
+                "//set with numbers de variable.\r",
+                "pm.test(\"body number\", function () {\r",
+                "pm.collectionVariables.set(\"body\", 123);\r",
+                "\r",
+                "});\r",
+                "\r",
+                "//set with numbers de variable.\r",
+                "pm.test(\"body number\", function () {\r",
+                "pm.collectionVariables.set(\"body\", 123);\r",
+                "});\r",
+                "\r",
+                "//Verifing status 400 fail\r",
+                "pm.test(\"Status code is 400\", function () {\r",
+                "    pm.response.to.have.status(400);\r",
+                "});\r",
+                ""
+              ],
+              "_lastExecutionId": "a1940072-46bf-43f9-846d-59ab9eb21ee3"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "id": "4fdf9d47-49fe-4a8f-b110-be9a78399dd6",
+          "type": "text/javascript",
+          "exec": [
+            "pm.globals.set(\"body\", \"{{body}}\");"
+          ],
+          "_lastExecutionId": "78dfe8b9-fe1b-4258-9b29-60c2a736b5cc"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "id": "97d19915-183f-4d28-8476-827b771579c0",
+          "type": "text/javascript",
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "2c60401a-0c48-42f5-9813-ce241022466e"
+        }
+      }
+    ],
+    "variable": [
+      {
+        "id": "0c104865-786f-4a66-a909-48f8c249ce71",
+        "type": "string",
+        "value": "{{body}}",
+        "key": "body"
+      }
+    ],
+    "info": {
+      "_postman_id": "1b6debdd-f4fd-4a97-bcb1-d5845fa017bf",
+      "name": "Test_Acceptance_SBDB_BodyFilter",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "id": "7b173fba-f0a2-49c7-b851-1e249a549ee1",
+    "values": []
+  },
+  "globals": {
+    "id": "650b831a-fc2d-4d00-af78-26ef154e8bb6",
+    "values": [
+      {
+        "type": "any",
+        "value": "{{body}}",
+        "key": "body"
+      }
+    ]
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 16,
+        "pending": 0,
+        "failed": 1
+      },
+      "testScripts": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 2499,
+      "responseMin": 2084,
+      "responseMax": 2914,
+      "responseSd": 415,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1662336159097,
+      "completed": 1662336164663
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 2,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "820af8bb-fcc2-4865-9491-f7ea6694df30",
+          "httpRequestId": "9e89ad06-00fc-4fbf-9a00-3a253867a62b"
+        },
+        "item": {
+          "id": "42e67284-54ae-4ee3-8761-0a3ca1aab045",
+          "name": "Verify-Filter-Body",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "cad.api"
+              ],
+              "host": [
+                "ssd-api",
+                "jpl",
+                "nasa",
+                "gov"
+              ],
+              "query": [
+                {
+                  "key": "body",
+                  "value": "{{body}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "d31ffae7-e75f-421f-8b00-0d42b4aec7cd",
+                "type": "text/javascript",
+                "exec": [
+                  "/*\r",
+                  "Test 5: Verify-Filter-Body\r",
+                  "Objetive: Test filter body and validate all the correct values.\r",
+                  "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                  "Object version: 1.4\r",
+                  "Test Version: v1.0\r",
+                  "Date: 31/08/2022\r",
+                  "*/\r",
+                  "\r",
+                  "var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+                  "\r",
+                  "//set de variable body with all posibilities availables\r",
+                  "pm.test(\"body Merc\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Mercurio\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Venus\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Earth\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Earth\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Mars\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Mars\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Venus\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Juptr\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Jupiter\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Venus\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Satrn\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Saturn\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Urnus\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Uranus\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Neptn\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Neptune\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Pluto\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Pluto\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"body Moon\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"Moon\");\r",
+                  "});"
+                ],
+                "_lastExecutionId": "4d78be66-2af5-4944-aa51-dbe1d3b16637"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "cad.api"
+            ],
+            "host": [
+              "ssd-api",
+              "jpl",
+              "nasa",
+              "gov"
+            ],
+            "query": [
+              {
+                "key": "body",
+                "value": "{{body}}"
+              }
+            ],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.2",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "d456a5a0-90c6-4746-b5b9-c5ae7d2f1389",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "ssd-api.jpl.nasa.gov",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "f41a73c3-145c-4f7b-9b66-f722579a7f72",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 05 Sep 2022 00:02:40 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "nginx"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              109,
+              111,
+              114,
+              101,
+              73,
+              110,
+              102,
+              111,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              115,
+              115,
+              100,
+              45,
+              97,
+              112,
+              105,
+              46,
+              106,
+              112,
+              108,
+              46,
+              110,
+              97,
+              115,
+              97,
+              46,
+              103,
+              111,
+              118,
+              47,
+              100,
+              111,
+              99,
+              47,
+              99,
+              97,
+              100,
+              46,
+              104,
+              116,
+              109,
+              108,
+              34,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              98,
+              111,
+              100,
+              121,
+              32,
+              110,
+              111,
+              116,
+              32,
+              102,
+              111,
+              117,
+              110,
+              100,
+              34,
+              44,
+              34,
+              99,
+              111,
+              100,
+              101,
+              34,
+              58,
+              34,
+              52,
+              48,
+              48,
+              34,
+              125,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 2084,
+          "responseSize": 97
+        },
+        "id": "42e67284-54ae-4ee3-8761-0a3ca1aab045",
+        "assertions": [
+          {
+            "assertion": "body Merc",
+            "skipped": false
+          },
+          {
+            "assertion": "body Venus",
+            "skipped": false
+          },
+          {
+            "assertion": "body Earth",
+            "skipped": false
+          },
+          {
+            "assertion": "body Mars",
+            "skipped": false
+          },
+          {
+            "assertion": "body Venus",
+            "skipped": false
+          },
+          {
+            "assertion": "body Juptr",
+            "skipped": false
+          },
+          {
+            "assertion": "body Venus",
+            "skipped": false
+          },
+          {
+            "assertion": "body Satrn",
+            "skipped": false
+          },
+          {
+            "assertion": "body Urnus",
+            "skipped": false
+          },
+          {
+            "assertion": "body Neptn",
+            "skipped": false
+          },
+          {
+            "assertion": "body Pluto",
+            "skipped": false
+          },
+          {
+            "assertion": "body Moon",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "d3994d16-63df-4558-9466-398ad554b30b",
+          "length": 2,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "8886449b-c983-4f61-a1ec-d604f10f8ade"
+        },
+        "item": {
+          "id": "982f76f1-9084-43b3-9594-79eed0229786",
+          "name": "Verify-Filter-Body-Fail",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "cad.api"
+              ],
+              "host": [
+                "ssd-api",
+                "jpl",
+                "nasa",
+                "gov"
+              ],
+              "query": [
+                {
+                  "key": "body",
+                  "value": "{{body}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "97af9a58-6cef-4030-b1c1-318538719581",
+                "type": "text/javascript",
+                "exec": [
+                  "/*\r",
+                  "Test 6: Verify-Filter-Body-Fail\r",
+                  "Objetive: Test filter body with invalid parameter.\r",
+                  "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                  "Object version: 1.4\r",
+                  "Test Version: v1.0\r",
+                  "Date: 31/08/2022\r",
+                  "*/\r",
+                  "\r",
+                  "var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+                  "\r",
+                  "//set an inexisten variable, keeping 3 letters.\r",
+                  "pm.test(\"body sun\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"sun\");\r",
+                  "});\r",
+                  "\r",
+                  "//set with numbers de variable.\r",
+                  "pm.test(\"body number\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", 123);\r",
+                  "\r",
+                  "});\r",
+                  "\r",
+                  "//set with numbers de variable.\r",
+                  "pm.test(\"body number\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", 123);\r",
+                  "});\r",
+                  "\r",
+                  "//Verifing status 400 fail\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  ""
+                ],
+                "_lastExecutionId": "a1940072-46bf-43f9-846d-59ab9eb21ee3"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "cad.api"
+            ],
+            "host": [
+              "ssd-api",
+              "jpl",
+              "nasa",
+              "gov"
+            ],
+            "query": [
+              {
+                "key": "body",
+                "value": "Moon"
+              }
+            ],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.2",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "81c7aabb-bc03-4239-b051-01db34b05936",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "ssd-api.jpl.nasa.gov",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "b3e5704d-90e7-4b25-b253-74671b9d35a0",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 05 Sep 2022 00:02:43 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "nginx"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              105,
+              103,
+              110,
+              97,
+              116,
+              117,
+              114,
+              101,
+              34,
+              58,
+              123,
+              34,
+              115,
+              111,
+              117,
+              114,
+              99,
+              101,
+              34,
+              58,
+              34,
+              78,
+              65,
+              83,
+              65,
+              47,
+              74,
+              80,
+              76,
+              32,
+              83,
+              66,
+              68,
+              66,
+              32,
+              67,
+              108,
+              111,
+              115,
+              101,
+              32,
+              65,
+              112,
+              112,
+              114,
+              111,
+              97,
+              99,
+              104,
+              32,
+              68,
+              97,
+              116,
+              97,
+              32,
+              65,
+              80,
+              73,
+              34,
+              44,
+              34,
+              118,
+              101,
+              114,
+              115,
+              105,
+              111,
+              110,
+              34,
+              58,
+              34,
+              49,
+              46,
+              52,
+              34,
+              125,
+              44,
+              34,
+              99,
+              111,
+              117,
+              110,
+              116,
+              34,
+              58,
+              34,
+              51,
+              34,
+              44,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              115,
+              34,
+              58,
+              91,
+              34,
+              100,
+              101,
+              115,
+              34,
+              44,
+              34,
+              111,
+              114,
+              98,
+              105,
+              116,
+              95,
+              105,
+              100,
+              34,
+              44,
+              34,
+              106,
+              100,
+              34,
+              44,
+              34,
+              99,
+              100,
+              34,
+              44,
+              34,
+              100,
+              105,
+              115,
+              116,
+              34,
+              44,
+              34,
+              100,
+              105,
+              115,
+              116,
+              95,
+              109,
+              105,
+              110,
+              34,
+              44,
+              34,
+              100,
+              105,
+              115,
+              116,
+              95,
+              109,
+              97,
+              120,
+              34,
+              44,
+              34,
+              118,
+              95,
+              114,
+              101,
+              108,
+              34,
+              44,
+              34,
+              118,
+              95,
+              105,
+              110,
+              102,
+              34,
+              44,
+              34,
+              116,
+              95,
+              115,
+              105,
+              103,
+              109,
+              97,
+              95,
+              102,
+              34,
+              44,
+              34,
+              104,
+              34,
+              93,
+              44,
+              34,
+              100,
+              97,
+              116,
+              97,
+              34,
+              58,
+              91,
+              91,
+              34,
+              50,
+              48,
+              50,
+              50,
+              32,
+              82,
+              87,
+              34,
+              44,
+              34,
+              49,
+              34,
+              44,
+              34,
+              50,
+              52,
+              53,
+              57,
+              56,
+              50,
+              56,
+              46,
+              54,
+              48,
+              57,
+              48,
+              55,
+              55,
+              50,
+              53,
+              55,
+              34,
+              44,
+              34,
+              50,
+              48,
+              50,
+              50,
+              45,
+              83,
+              101,
+              112,
+              45,
+              48,
+              54,
+              32,
+              48,
+              50,
+              58,
+              51,
+              55,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              48,
+              53,
+              54,
+              55,
+              55,
+              52,
+              51,
+              53,
+              50,
+              50,
+              55,
+              55,
+              48,
+              57,
+              52,
+              54,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              48,
+              53,
+              54,
+              52,
+              56,
+              49,
+              50,
+              54,
+              57,
+              54,
+              51,
+              56,
+              48,
+              50,
+              56,
+              54,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              48,
+              53,
+              55,
+              48,
+              54,
+              55,
+              52,
+              53,
+              56,
+              51,
+              57,
+              57,
+              52,
+              51,
+              50,
+              57,
+              34,
+              44,
+              34,
+              49,
+              49,
+              46,
+              51,
+              51,
+              49,
+              52,
+              53,
+              54,
+              48,
+              49,
+              55,
+              52,
+              55,
+              52,
+              50,
+              34,
+              44,
+              34,
+              49,
+              49,
+              46,
+              51,
+              51,
+              48,
+              57,
+              52,
+              54,
+              53,
+              56,
+              48,
+              50,
+              57,
+              57,
+              57,
+              34,
+              44,
+              34,
+              48,
+              48,
+              58,
+              48,
+              49,
+              34,
+              44,
+              34,
+              50,
+              51,
+              46,
+              49,
+              49,
+              55,
+              34,
+              93,
+              44,
+              91,
+              34,
+              50,
+              48,
+              50,
+              48,
+              32,
+              84,
+              79,
+              50,
+              34,
+              44,
+              34,
+              55,
+              34,
+              44,
+              34,
+              50,
+              52,
+              53,
+              57,
+              56,
+              54,
+              56,
+              46,
+              52,
+              49,
+              57,
+              53,
+              52,
+              54,
+              48,
+              55,
+              49,
+              34,
+              44,
+              34,
+              50,
+              48,
+              50,
+              50,
+              45,
+              79,
+              99,
+              116,
+              45,
+              49,
+              53,
+              32,
+              50,
+              50,
+              58,
+              48,
+              52,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              48,
+              53,
+              51,
+              55,
+              55,
+              57,
+              53,
+              48,
+              49,
+              51,
+              49,
+              51,
+              55,
+              56,
+              55,
+              49,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              48,
+              51,
+              52,
+              52,
+              50,
+              51,
+              51,
+              53,
+              54,
+              56,
+              51,
+              55,
+              51,
+              52,
+              53,
+              52,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              53,
+              50,
+              56,
+              53,
+              56,
+              52,
+              52,
+              49,
+              56,
+              53,
+              48,
+              55,
+              56,
+              51,
+              55,
+              34,
+              44,
+              34,
+              49,
+              49,
+              46,
+              54,
+              56,
+              57,
+              54,
+              56,
+              55,
+              52,
+              57,
+              53,
+              55,
+              57,
+              55,
+              57,
+              34,
+              44,
+              34,
+              49,
+              49,
+              46,
+              54,
+              56,
+              57,
+              49,
+              54,
+              54,
+              49,
+              55,
+              48,
+              53,
+              49,
+              52,
+              51,
+              34,
+              44,
+              34,
+              52,
+              95,
+              50,
+              48,
+              58,
+              48,
+              51,
+              34,
+              44,
+              34,
+              50,
+              54,
+              46,
+              52,
+              51,
+              34,
+              93,
+              44,
+              91,
+              34,
+              50,
+              48,
+              48,
+              52,
+              32,
+              85,
+              84,
+              49,
+              34,
+              44,
+              34,
+              57,
+              34,
+              44,
+              34,
+              50,
+              52,
+              53,
+              57,
+              56,
+              56,
+              50,
+              46,
+              53,
+              51,
+              56,
+              55,
+              54,
+              52,
+              54,
+              52,
+              53,
+              34,
+              44,
+              34,
+              50,
+              48,
+              50,
+              50,
+              45,
+              79,
+              99,
+              116,
+              45,
+              51,
+              48,
+              32,
+              48,
+              48,
+              58,
+              53,
+              54,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              48,
+              56,
+              57,
+              54,
+              51,
+              48,
+              57,
+              56,
+              54,
+              52,
+              48,
+              50,
+              52,
+              48,
+              56,
+              56,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              48,
+              54,
+              50,
+              48,
+              56,
+              52,
+              57,
+              48,
+              54,
+              54,
+              48,
+              52,
+              54,
+              50,
+              51,
+              52,
+              34,
+              44,
+              34,
+              48,
+              46,
+              48,
+              49,
+              55,
+              53,
+              53,
+              57,
+              49,
+              55,
+              52,
+              50,
+              52,
+              49,
+              52,
+              51,
+              54,
+              50,
+              34,
+              44,
+              34,
+              55,
+              46,
+              49,
+              48,
+              50,
+              50,
+              55,
+              49,
+              49,
+              49,
+              50,
+              49,
+              49,
+              49,
+              57,
+              49,
+              34,
+              44,
+              34,
+              55,
+              46,
+              49,
+              48,
+              49,
+              55,
+              53,
+              54,
+              50,
+              54,
+              52,
+              48,
+              51,
+              52,
+              57,
+              51,
+              34,
+              44,
+              34,
+              48,
+              54,
+              58,
+              50,
+              51,
+              34,
+              44,
+              34,
+              50,
+              54,
+              46,
+              54,
+              34,
+              93,
+              93,
+              125,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 2914,
+          "responseSize": 731
+        },
+        "id": "982f76f1-9084-43b3-9594-79eed0229786",
+        "assertions": [
+          {
+            "assertion": "body sun",
+            "skipped": false
+          },
+          {
+            "assertion": "body number",
+            "skipped": false
+          },
+          {
+            "assertion": "body number",
+            "skipped": false
+          },
+          {
+            "assertion": "Status code is 400",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 3,
+              "test": "Status code is 400",
+              "message": "expected response to have status code 400 but got 200",
+              "stack": "AssertionError: expected response to have status code 400 but got 200\n   at Object.eval sandbox-script.js:4:2)"
+            }
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 828
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 3,
+          "test": "Status code is 400",
+          "message": "expected response to have status code 400 but got 200",
+          "stack": "AssertionError: expected response to have status code 400 but got 200\n   at Object.eval sandbox-script.js:4:2)",
+          "checksum": "37c9a0392030fdc083af57eea5c272d3",
+          "id": "539bddf2-d20c-4e6a-9b54-778212320931",
+          "timestamp": 1662336164625,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 4,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 2,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:3 in test-script",
+        "source": {
+          "id": "982f76f1-9084-43b3-9594-79eed0229786",
+          "name": "Verify-Filter-Body-Fail",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "cad.api"
+              ],
+              "host": [
+                "ssd-api",
+                "jpl",
+                "nasa",
+                "gov"
+              ],
+              "query": [
+                {
+                  "key": "body",
+                  "value": "{{body}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "97af9a58-6cef-4030-b1c1-318538719581",
+                "type": "text/javascript",
+                "exec": [
+                  "/*\r",
+                  "Test 6: Verify-Filter-Body-Fail\r",
+                  "Objetive: Test filter body with invalid parameter.\r",
+                  "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                  "Object version: 1.4\r",
+                  "Test Version: v1.0\r",
+                  "Date: 31/08/2022\r",
+                  "*/\r",
+                  "\r",
+                  "var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+                  "\r",
+                  "//set an inexisten variable, keeping 3 letters.\r",
+                  "pm.test(\"body sun\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", \"sun\");\r",
+                  "});\r",
+                  "\r",
+                  "//set with numbers de variable.\r",
+                  "pm.test(\"body number\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", 123);\r",
+                  "\r",
+                  "});\r",
+                  "\r",
+                  "//set with numbers de variable.\r",
+                  "pm.test(\"body number\", function () {\r",
+                  "pm.collectionVariables.set(\"body\", 123);\r",
+                  "});\r",
+                  "\r",
+                  "//Verifing status 400 fail\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  ""
+                ],
+                "_lastExecutionId": "a1940072-46bf-43f9-846d-59ab9eb21ee3"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "1b6debdd-f4fd-4a97-bcb1-d5845fa017bf"
+          },
+          "item": [
+            {
+              "id": "42e67284-54ae-4ee3-8761-0a3ca1aab045",
+              "name": "Verify-Filter-Body",
+              "request": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "cad.api"
+                  ],
+                  "host": [
+                    "ssd-api",
+                    "jpl",
+                    "nasa",
+                    "gov"
+                  ],
+                  "query": [
+                    {
+                      "key": "body",
+                      "value": "{{body}}"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "d31ffae7-e75f-421f-8b00-0d42b4aec7cd",
+                    "type": "text/javascript",
+                    "exec": [
+                      "/*\r",
+                      "Test 5: Verify-Filter-Body\r",
+                      "Objetive: Test filter body and validate all the correct values.\r",
+                      "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                      "Object version: 1.4\r",
+                      "Test Version: v1.0\r",
+                      "Date: 31/08/2022\r",
+                      "*/\r",
+                      "\r",
+                      "var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+                      "\r",
+                      "//set de variable body with all posibilities availables\r",
+                      "pm.test(\"body Merc\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Mercurio\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Venus\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Earth\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Earth\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Mars\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Mars\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Venus\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Juptr\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Jupiter\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Venus\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Venus\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Satrn\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Saturn\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Urnus\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Uranus\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Neptn\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Neptune\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Pluto\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Pluto\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"body Moon\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"Moon\");\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "4d78be66-2af5-4944-aa51-dbe1d3b16637"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "982f76f1-9084-43b3-9594-79eed0229786",
+              "name": "Verify-Filter-Body-Fail",
+              "request": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "cad.api"
+                  ],
+                  "host": [
+                    "ssd-api",
+                    "jpl",
+                    "nasa",
+                    "gov"
+                  ],
+                  "query": [
+                    {
+                      "key": "body",
+                      "value": "{{body}}"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "97af9a58-6cef-4030-b1c1-318538719581",
+                    "type": "text/javascript",
+                    "exec": [
+                      "/*\r",
+                      "Test 6: Verify-Filter-Body-Fail\r",
+                      "Objetive: Test filter body with invalid parameter.\r",
+                      "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                      "Object version: 1.4\r",
+                      "Test Version: v1.0\r",
+                      "Date: 31/08/2022\r",
+                      "*/\r",
+                      "\r",
+                      "var response = pm.response.json(); //Set variable response to verify in query the values requested.\r",
+                      "\r",
+                      "//set an inexisten variable, keeping 3 letters.\r",
+                      "pm.test(\"body sun\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", \"sun\");\r",
+                      "});\r",
+                      "\r",
+                      "//set with numbers de variable.\r",
+                      "pm.test(\"body number\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", 123);\r",
+                      "\r",
+                      "});\r",
+                      "\r",
+                      "//set with numbers de variable.\r",
+                      "pm.test(\"body number\", function () {\r",
+                      "pm.collectionVariables.set(\"body\", 123);\r",
+                      "});\r",
+                      "\r",
+                      "//Verifing status 400 fail\r",
+                      "pm.test(\"Status code is 400\", function () {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "});\r",
+                      ""
+                    ],
+                    "_lastExecutionId": "a1940072-46bf-43f9-846d-59ab9eb21ee3"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4fdf9d47-49fe-4a8f-b110-be9a78399dd6",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.globals.set(\"body\", \"{{body}}\");"
+                ],
+                "_lastExecutionId": "78dfe8b9-fe1b-4258-9b29-60c2a736b5cc"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "97d19915-183f-4d28-8476-827b771579c0",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "2c60401a-0c48-42f5-9813-ce241022466e"
+              }
+            }
+          ],
+          "variable": [
+            {
+              "id": "0c104865-786f-4a66-a909-48f8c249ce71",
+              "type": "string",
+              "value": "{{body}}",
+              "key": "body"
+            }
+          ],
+          "info": {
+            "_postman_id": "1b6debdd-f4fd-4a97-bcb1-d5845fa017bf",
+            "name": "Test_Acceptance_SBDB_BodyFilter",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "d3994d16-63df-4558-9466-398ad554b30b",
+          "length": 2,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "8886449b-c983-4f61-a1ec-d604f10f8ade",
+          "scriptId": "97af9a58-6cef-4030-b1c1-318538719581",
+          "execution": "a1940072-46bf-43f9-846d-59ab9eb21ee3"
+        }
+      }
+    ],
+    "error": null
+  }
+}

@@ -1,0 +1,1538 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "35f26490-cf97-429d-abcd-5a801b6e58de"
+    },
+    "item": [
+      {
+        "id": "8f615640-0103-4a34-bff3-6b9d0bd84f22",
+        "name": "Verify-Filter-Class",
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "cad.api"
+            ],
+            "host": [
+              "ssd-api",
+              "jpl",
+              "nasa",
+              "gov"
+            ],
+            "query": [
+              {
+                "key": "class",
+                "value": "{{class}}"
+              }
+            ],
+            "variable": []
+          },
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "3e7b6704-4c5b-4fd8-a20c-c5690eb97d56",
+              "type": "text/javascript",
+              "exec": [
+                "/*\r",
+                "Test 3: Verify-Filter-Class\r",
+                "Objetive: Test Class filter with valid values\r",
+                "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                "Object version: 1.4\r",
+                "Test Version: v1.0\r",
+                "Date:31-08-2022\r",
+                "*/\r",
+                "\r",
+                "var response = pm.response.json();\r",
+                "\r",
+                "pm.test(\"class-IEO\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"IEO\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-ATE\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"ATE\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-APO\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"APO\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-AMO\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"AMO\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-IMB\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"IMB\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-MBA\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"MBA\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-OMB\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"OMB\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-TJN\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"TJN\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-CEN\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"CEN\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-TNO\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"TNO\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-PAA\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"PAA\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-HYA\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"HYA\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-PAR\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"PAR\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-COM\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"COM\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-JFC\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"JFC\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-HTC\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"HTC\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-ETc\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"ETc\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-CTc\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"CTc\");\r",
+                "});\r",
+                "\r",
+                "pm.test(\"class-JFc\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"JFc\");\r",
+                "});"
+              ],
+              "_lastExecutionId": "bbf5049d-75b7-49b0-a0e0-b94fc1a2830b"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      },
+      {
+        "id": "f59d04ca-5819-4c6e-a124-334d5faf5605",
+        "name": "Verify-Filter-Class-Fail",
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "cad.api"
+            ],
+            "host": [
+              "ssd-api",
+              "jpl",
+              "nasa",
+              "gov"
+            ],
+            "query": [
+              {
+                "key": "class",
+                "value": "{{class}}"
+              }
+            ],
+            "variable": []
+          },
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "51efb721-b798-4af1-aad3-abd6fe33cde3",
+              "type": "text/javascript",
+              "exec": [
+                "/*\r",
+                "Test 4: Verify-Filter-Class\r",
+                "Objetive: Verify Class filter with incorrect values\r",
+                "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                "Object version: 1.4\r",
+                "Test Version: v1.0\r",
+                "Date:31-08-2022\r",
+                "*/\r",
+                "\r",
+                "\r",
+                "//Negative test, this test should fail, in invalid values\r",
+                "pm.test(\"class-invalid\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"1222\");\r",
+                "});\r",
+                "\r",
+                "//Negative test, this test should fail, the variable have to be \"key sensitive\"\r",
+                "pm.test(\"class-com\", function () {\r",
+                "pm.collectionVariables.set(\"class\", \"com\");\r",
+                "});\r",
+                "\r",
+                "//Verifing status 400 fail\r",
+                "pm.test(\"Status code is 400\", function () {\r",
+                "    pm.response.to.have.status(400);\r",
+                "});\r",
+                ""
+              ],
+              "_lastExecutionId": "db58cf1f-eaa6-4a9f-af70-f3aed77c5194"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      }
+    ],
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "id": "2e8c9baa-2416-41dd-b44f-f11df6144536",
+          "type": "text/javascript",
+          "exec": [
+            "pm.globals.set(\"class\", \"{{class}}\");"
+          ],
+          "_lastExecutionId": "5d6c3775-4dcd-4152-9726-91aa36c05b84"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "id": "158cb10d-6463-48cf-a6d2-2eab5857110f",
+          "type": "text/javascript",
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "a82c63a6-a9a1-4292-93ce-2106ce13c8a6"
+        }
+      }
+    ],
+    "variable": [
+      {
+        "id": "fdb872e3-6bda-45f5-a801-c91b61e2a1d7",
+        "type": "string",
+        "value": "{{class}}",
+        "key": "class"
+      }
+    ],
+    "info": {
+      "_postman_id": "35f26490-cf97-429d-abcd-5a801b6e58de",
+      "name": "Test_Acceptance-FilterClass",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "id": "5a7356af-b784-407c-b63d-e8771b8b0d67",
+    "values": []
+  },
+  "globals": {
+    "id": "1a6616f1-0b51-42be-957a-013b4fc913cb",
+    "values": [
+      {
+        "type": "any",
+        "value": "{{class}}",
+        "key": "class"
+      }
+    ]
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 22,
+        "pending": 0,
+        "failed": 1
+      },
+      "testScripts": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 1259.5,
+      "responseMin": 312,
+      "responseMax": 2207,
+      "responseSd": 947.5,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1662335989540,
+      "completed": 1662335992696
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 2,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "6e4f1951-0169-4b97-88b1-ca1dd8c34915",
+          "httpRequestId": "4b32fea9-0cbd-4d60-833b-a8603f83030f"
+        },
+        "item": {
+          "id": "8f615640-0103-4a34-bff3-6b9d0bd84f22",
+          "name": "Verify-Filter-Class",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "cad.api"
+              ],
+              "host": [
+                "ssd-api",
+                "jpl",
+                "nasa",
+                "gov"
+              ],
+              "query": [
+                {
+                  "key": "class",
+                  "value": "{{class}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "3e7b6704-4c5b-4fd8-a20c-c5690eb97d56",
+                "type": "text/javascript",
+                "exec": [
+                  "/*\r",
+                  "Test 3: Verify-Filter-Class\r",
+                  "Objetive: Test Class filter with valid values\r",
+                  "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                  "Object version: 1.4\r",
+                  "Test Version: v1.0\r",
+                  "Date:31-08-2022\r",
+                  "*/\r",
+                  "\r",
+                  "var response = pm.response.json();\r",
+                  "\r",
+                  "pm.test(\"class-IEO\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"IEO\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-ATE\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"ATE\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-APO\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"APO\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-AMO\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"AMO\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-IMB\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"IMB\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-MBA\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"MBA\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-OMB\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"OMB\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-TJN\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"TJN\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-CEN\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"CEN\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-TNO\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"TNO\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-PAA\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"PAA\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-HYA\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"HYA\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-PAR\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"PAR\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-COM\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"COM\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-JFC\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"JFC\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-HTC\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"HTC\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-ETc\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"ETc\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-CTc\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"CTc\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"class-JFc\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"JFc\");\r",
+                  "});"
+                ],
+                "_lastExecutionId": "bbf5049d-75b7-49b0-a0e0-b94fc1a2830b"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "cad.api"
+            ],
+            "host": [
+              "ssd-api",
+              "jpl",
+              "nasa",
+              "gov"
+            ],
+            "query": [
+              {
+                "key": "class",
+                "value": "{{class}}"
+              }
+            ],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.2",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "47d76d60-8267-4201-bb2e-ffbb8296e2ed",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "ssd-api.jpl.nasa.gov",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "3ba54836-a2e3-4713-992b-9988d182559e",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 04 Sep 2022 23:59:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "nginx"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              109,
+              111,
+              114,
+              101,
+              73,
+              110,
+              102,
+              111,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              115,
+              115,
+              100,
+              45,
+              97,
+              112,
+              105,
+              46,
+              106,
+              112,
+              108,
+              46,
+              110,
+              97,
+              115,
+              97,
+              46,
+              103,
+              111,
+              118,
+              47,
+              100,
+              111,
+              99,
+              47,
+              99,
+              97,
+              100,
+              46,
+              104,
+              116,
+              109,
+              108,
+              34,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              105,
+              110,
+              118,
+              97,
+              108,
+              105,
+              100,
+              32,
+              118,
+              97,
+              108,
+              117,
+              101,
+              32,
+              115,
+              112,
+              101,
+              99,
+              105,
+              102,
+              105,
+              101,
+              100,
+              32,
+              102,
+              111,
+              114,
+              32,
+              113,
+              117,
+              101,
+              114,
+              121,
+              32,
+              112,
+              97,
+              114,
+              97,
+              109,
+              101,
+              116,
+              101,
+              114,
+              32,
+              39,
+              99,
+              108,
+              97,
+              115,
+              115,
+              39,
+              58,
+              32,
+              105,
+              110,
+              118,
+              97,
+              108,
+              105,
+              100,
+              32,
+              111,
+              114,
+              98,
+              105,
+              116,
+              32,
+              99,
+              108,
+              97,
+              115,
+              115,
+              32,
+              102,
+              111,
+              114,
+              109,
+              97,
+              116,
+              32,
+              40,
+              101,
+              120,
+              112,
+              101,
+              99,
+              116,
+              105,
+              110,
+              103,
+              32,
+              51,
+              45,
+              108,
+              101,
+              116,
+              116,
+              101,
+              114,
+              32,
+              102,
+              111,
+              114,
+              109,
+              41,
+              34,
+              44,
+              34,
+              99,
+              111,
+              100,
+              101,
+              34,
+              58,
+              34,
+              52,
+              48,
+              48,
+              34,
+              125,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 2207,
+          "responseSize": 188
+        },
+        "id": "8f615640-0103-4a34-bff3-6b9d0bd84f22",
+        "assertions": [
+          {
+            "assertion": "class-IEO",
+            "skipped": false
+          },
+          {
+            "assertion": "class-ATE",
+            "skipped": false
+          },
+          {
+            "assertion": "class-APO",
+            "skipped": false
+          },
+          {
+            "assertion": "class-AMO",
+            "skipped": false
+          },
+          {
+            "assertion": "class-IMB",
+            "skipped": false
+          },
+          {
+            "assertion": "class-MBA",
+            "skipped": false
+          },
+          {
+            "assertion": "class-OMB",
+            "skipped": false
+          },
+          {
+            "assertion": "class-TJN",
+            "skipped": false
+          },
+          {
+            "assertion": "class-CEN",
+            "skipped": false
+          },
+          {
+            "assertion": "class-TNO",
+            "skipped": false
+          },
+          {
+            "assertion": "class-PAA",
+            "skipped": false
+          },
+          {
+            "assertion": "class-HYA",
+            "skipped": false
+          },
+          {
+            "assertion": "class-PAR",
+            "skipped": false
+          },
+          {
+            "assertion": "class-COM",
+            "skipped": false
+          },
+          {
+            "assertion": "class-JFC",
+            "skipped": false
+          },
+          {
+            "assertion": "class-HTC",
+            "skipped": false
+          },
+          {
+            "assertion": "class-ETc",
+            "skipped": false
+          },
+          {
+            "assertion": "class-CTc",
+            "skipped": false
+          },
+          {
+            "assertion": "class-JFc",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "85ca548a-0b0c-4b89-9230-c6dc0137b2b1",
+          "length": 2,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "cdbc23e5-f88d-4ad9-8967-e85aa7887718"
+        },
+        "item": {
+          "id": "f59d04ca-5819-4c6e-a124-334d5faf5605",
+          "name": "Verify-Filter-Class-Fail",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "cad.api"
+              ],
+              "host": [
+                "ssd-api",
+                "jpl",
+                "nasa",
+                "gov"
+              ],
+              "query": [
+                {
+                  "key": "class",
+                  "value": "{{class}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "51efb721-b798-4af1-aad3-abd6fe33cde3",
+                "type": "text/javascript",
+                "exec": [
+                  "/*\r",
+                  "Test 4: Verify-Filter-Class\r",
+                  "Objetive: Verify Class filter with incorrect values\r",
+                  "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                  "Object version: 1.4\r",
+                  "Test Version: v1.0\r",
+                  "Date:31-08-2022\r",
+                  "*/\r",
+                  "\r",
+                  "\r",
+                  "//Negative test, this test should fail, in invalid values\r",
+                  "pm.test(\"class-invalid\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"1222\");\r",
+                  "});\r",
+                  "\r",
+                  "//Negative test, this test should fail, the variable have to be \"key sensitive\"\r",
+                  "pm.test(\"class-com\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"com\");\r",
+                  "});\r",
+                  "\r",
+                  "//Verifing status 400 fail\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  ""
+                ],
+                "_lastExecutionId": "db58cf1f-eaa6-4a9f-af70-f3aed77c5194"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "cad.api"
+            ],
+            "host": [
+              "ssd-api",
+              "jpl",
+              "nasa",
+              "gov"
+            ],
+            "query": [
+              {
+                "key": "class",
+                "value": "JFc"
+              }
+            ],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.2",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "bfcf1265-874f-43ac-bca0-aca43c5c3d53",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "ssd-api.jpl.nasa.gov",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "90bedd8a-a3ea-4b89-b4bf-45a57ad55d57",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 04 Sep 2022 23:59:51 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "nginx"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              99,
+              111,
+              117,
+              110,
+              116,
+              34,
+              58,
+              34,
+              48,
+              34,
+              44,
+              34,
+              115,
+              105,
+              103,
+              110,
+              97,
+              116,
+              117,
+              114,
+              101,
+              34,
+              58,
+              123,
+              34,
+              115,
+              111,
+              117,
+              114,
+              99,
+              101,
+              34,
+              58,
+              34,
+              78,
+              65,
+              83,
+              65,
+              47,
+              74,
+              80,
+              76,
+              32,
+              83,
+              66,
+              68,
+              66,
+              32,
+              67,
+              108,
+              111,
+              115,
+              101,
+              32,
+              65,
+              112,
+              112,
+              114,
+              111,
+              97,
+              99,
+              104,
+              32,
+              68,
+              97,
+              116,
+              97,
+              32,
+              65,
+              80,
+              73,
+              34,
+              44,
+              34,
+              118,
+              101,
+              114,
+              115,
+              105,
+              111,
+              110,
+              34,
+              58,
+              34,
+              49,
+              46,
+              52,
+              34,
+              125,
+              125,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 312,
+          "responseSize": 93
+        },
+        "id": "f59d04ca-5819-4c6e-a124-334d5faf5605",
+        "assertions": [
+          {
+            "assertion": "class-invalid",
+            "skipped": false
+          },
+          {
+            "assertion": "class-com",
+            "skipped": false
+          },
+          {
+            "assertion": "Status code is 400",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 2,
+              "test": "Status code is 400",
+              "message": "expected response to have status code 400 but got 200",
+              "stack": "AssertionError: expected response to have status code 400 but got 200\n   at Object.eval sandbox-script.js:3:2)"
+            }
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 281
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 2,
+          "test": "Status code is 400",
+          "message": "expected response to have status code 400 but got 200",
+          "stack": "AssertionError: expected response to have status code 400 but got 200\n   at Object.eval sandbox-script.js:3:2)",
+          "checksum": "d00c9ea264d9c1f04ba4dd1110ca62e8",
+          "id": "57e19dd2-0d84-46b8-9a80-b61c9b7f74d9",
+          "timestamp": 1662335992610,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 3,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 2,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:2 in test-script",
+        "source": {
+          "id": "f59d04ca-5819-4c6e-a124-334d5faf5605",
+          "name": "Verify-Filter-Class-Fail",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "cad.api"
+              ],
+              "host": [
+                "ssd-api",
+                "jpl",
+                "nasa",
+                "gov"
+              ],
+              "query": [
+                {
+                  "key": "class",
+                  "value": "{{class}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "51efb721-b798-4af1-aad3-abd6fe33cde3",
+                "type": "text/javascript",
+                "exec": [
+                  "/*\r",
+                  "Test 4: Verify-Filter-Class\r",
+                  "Objetive: Verify Class filter with incorrect values\r",
+                  "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                  "Object version: 1.4\r",
+                  "Test Version: v1.0\r",
+                  "Date:31-08-2022\r",
+                  "*/\r",
+                  "\r",
+                  "\r",
+                  "//Negative test, this test should fail, in invalid values\r",
+                  "pm.test(\"class-invalid\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"1222\");\r",
+                  "});\r",
+                  "\r",
+                  "//Negative test, this test should fail, the variable have to be \"key sensitive\"\r",
+                  "pm.test(\"class-com\", function () {\r",
+                  "pm.collectionVariables.set(\"class\", \"com\");\r",
+                  "});\r",
+                  "\r",
+                  "//Verifing status 400 fail\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  ""
+                ],
+                "_lastExecutionId": "db58cf1f-eaa6-4a9f-af70-f3aed77c5194"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "parent": {
+          "_": {
+            "postman_id": "35f26490-cf97-429d-abcd-5a801b6e58de"
+          },
+          "item": [
+            {
+              "id": "8f615640-0103-4a34-bff3-6b9d0bd84f22",
+              "name": "Verify-Filter-Class",
+              "request": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "cad.api"
+                  ],
+                  "host": [
+                    "ssd-api",
+                    "jpl",
+                    "nasa",
+                    "gov"
+                  ],
+                  "query": [
+                    {
+                      "key": "class",
+                      "value": "{{class}}"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "3e7b6704-4c5b-4fd8-a20c-c5690eb97d56",
+                    "type": "text/javascript",
+                    "exec": [
+                      "/*\r",
+                      "Test 3: Verify-Filter-Class\r",
+                      "Objetive: Test Class filter with valid values\r",
+                      "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                      "Object version: 1.4\r",
+                      "Test Version: v1.0\r",
+                      "Date:31-08-2022\r",
+                      "*/\r",
+                      "\r",
+                      "var response = pm.response.json();\r",
+                      "\r",
+                      "pm.test(\"class-IEO\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"IEO\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-ATE\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"ATE\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-APO\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"APO\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-AMO\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"AMO\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-IMB\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"IMB\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-MBA\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"MBA\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-OMB\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"OMB\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-TJN\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"TJN\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-CEN\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"CEN\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-TNO\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"TNO\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-PAA\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"PAA\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-HYA\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"HYA\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-PAR\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"PAR\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-COM\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"COM\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-JFC\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"JFC\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-HTC\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"HTC\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-ETc\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"ETc\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-CTc\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"CTc\");\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"class-JFc\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"JFc\");\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "bbf5049d-75b7-49b0-a0e0-b94fc1a2830b"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "id": "f59d04ca-5819-4c6e-a124-334d5faf5605",
+              "name": "Verify-Filter-Class-Fail",
+              "request": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "cad.api"
+                  ],
+                  "host": [
+                    "ssd-api",
+                    "jpl",
+                    "nasa",
+                    "gov"
+                  ],
+                  "query": [
+                    {
+                      "key": "class",
+                      "value": "{{class}}"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "51efb721-b798-4af1-aad3-abd6fe33cde3",
+                    "type": "text/javascript",
+                    "exec": [
+                      "/*\r",
+                      "Test 4: Verify-Filter-Class\r",
+                      "Objetive: Verify Class filter with incorrect values\r",
+                      "Object: https://ssd-api.jpl.nasa.gov/cad.api \r",
+                      "Object version: 1.4\r",
+                      "Test Version: v1.0\r",
+                      "Date:31-08-2022\r",
+                      "*/\r",
+                      "\r",
+                      "\r",
+                      "//Negative test, this test should fail, in invalid values\r",
+                      "pm.test(\"class-invalid\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"1222\");\r",
+                      "});\r",
+                      "\r",
+                      "//Negative test, this test should fail, the variable have to be \"key sensitive\"\r",
+                      "pm.test(\"class-com\", function () {\r",
+                      "pm.collectionVariables.set(\"class\", \"com\");\r",
+                      "});\r",
+                      "\r",
+                      "//Verifing status 400 fail\r",
+                      "pm.test(\"Status code is 400\", function () {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "});\r",
+                      ""
+                    ],
+                    "_lastExecutionId": "db58cf1f-eaa6-4a9f-af70-f3aed77c5194"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2e8c9baa-2416-41dd-b44f-f11df6144536",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.globals.set(\"class\", \"{{class}}\");"
+                ],
+                "_lastExecutionId": "5d6c3775-4dcd-4152-9726-91aa36c05b84"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "158cb10d-6463-48cf-a6d2-2eab5857110f",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "a82c63a6-a9a1-4292-93ce-2106ce13c8a6"
+              }
+            }
+          ],
+          "variable": [
+            {
+              "id": "fdb872e3-6bda-45f5-a801-c91b61e2a1d7",
+              "type": "string",
+              "value": "{{class}}",
+              "key": "class"
+            }
+          ],
+          "info": {
+            "_postman_id": "35f26490-cf97-429d-abcd-5a801b6e58de",
+            "name": "Test_Acceptance-FilterClass",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "85ca548a-0b0c-4b89-9230-c6dc0137b2b1",
+          "length": 2,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "cdbc23e5-f88d-4ad9-8967-e85aa7887718",
+          "scriptId": "51efb721-b798-4af1-aad3-abd6fe33cde3",
+          "execution": "db58cf1f-eaa6-4a9f-af70-f3aed77c5194"
+        }
+      }
+    ],
+    "error": null
+  }
+}
